@@ -1,0 +1,13 @@
+[abd Workload] Completed.
+  GET success: 2378
+  PUT success: 21622
+  FAIL count:  0
+  Total ops:   24000
+  Elapsed:     0.64672 sec
+  Throughput:  37110.3 ops/sec
+
+--- Latency (microseconds) ---
+GET median: 298
+GET p95:    428
+PUT median: 297
+PUT p95:    423

@@ -1,0 +1,13 @@
+[blocking Workload] Completed.
+  GET success: 643
+  PUT success: 5519
+  FAIL count:  1838
+  Total ops:   8000
+  Elapsed:     1.5111 sec
+  Throughput:  5294.17 ops/sec
+
+--- Latency (microseconds) ---
+GET median: 615
+GET p95:    918
+PUT median: 813
+PUT p95:    1146
