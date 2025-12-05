@@ -1,11 +1,6 @@
 #!/bin/bash
 
-###############################################################################
-# SAFE Experiment Script for CSE 511 PA2 – CSV Output, Robust Server Handling
-# Uses HIGH PORTS (15000+) to avoid conflicts on shared CSE machines
-###############################################################################
-
-set -u  # error on undefined vars
+set -u
 
 SERVER_BIN_ABD=./abd/abd_server
 SERVER_BIN_BLOCKING=./blocking/blocking_server
@@ -27,12 +22,6 @@ CSV_FILE=$RESULT_DIR/results.csv
 echo "protocol,N,clients,get_fraction,throughput,get_median,get_p95,put_median,put_p95,succ_get,succ_put,fail" \
     > "$CSV_FILE"
 
-###############################################################################
-# Port assignment (HIGH PORTS to avoid interference)
-# N=1 -> 15000
-# N=3 -> 15100–15102
-# N=5 -> 15200–15204
-###############################################################################
 port_for() {
     local n=$1
     local idx=$2
@@ -44,9 +33,6 @@ port_for() {
     esac
 }
 
-###############################################################################
-# Server Health Check
-###############################################################################
 wait_for_server() {
     local port=$1
     for _ in {1..20}; do
